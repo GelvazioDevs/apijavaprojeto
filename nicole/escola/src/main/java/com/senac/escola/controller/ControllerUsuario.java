@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.senac.escola.model.Usuario;
 import com.senac.escola.repository.UsuarioRepository;
+import com.senac.escola.exception.ResourceNotFoundException;
 
-import apibase.exception.ResourceNotFoundException;
 @RestController
 @RequestMapping("/api/v1")
 public class ControllerUsuario {
@@ -32,7 +32,6 @@ public class ControllerUsuario {
 		return this.usuarioRepository.findAll();
 	}
 
-    
 	// Inserir
 	@PostMapping("/usuario")
 	@ResponseStatus(HttpStatus.CREATED)	
